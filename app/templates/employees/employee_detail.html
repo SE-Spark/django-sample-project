@@ -1,0 +1,25 @@
+{% extends 'employees/base.html' %}
+
+{% block title %}Employee Detail{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Employee Detail</h1>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Name:</strong> {{ employee.name }}</p>
+                        <p><strong>Mobile:</strong> {{ employee.mobile }}</p>
+                        <p><strong>Email:</strong> {{ employee.email }}</p>
+                        <p><strong>Address:</strong> {{ employee.address }}</p>
+                        <p><strong>Gender:</strong> {{ employee.gender }}</p>
+                        <p><strong>Salary:</strong> {{ employee.salary }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

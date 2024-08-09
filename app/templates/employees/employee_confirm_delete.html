@@ -1,0 +1,25 @@
+{% extends 'employees/base.html' %}
+
+{% block title %}Employee List{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center">Delete Employee</h1>
+                </div>
+                <div class="card-body">
+                    <p>Are you sure you want to delete the employee '{{ employee.name }}'? This action cannot be undone.</p>
+                    <form action="{% url 'delete_employee' employee.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                        <a href="{% url 'employee_list' %}" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
